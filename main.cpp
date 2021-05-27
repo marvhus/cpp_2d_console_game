@@ -32,10 +32,8 @@ void Startup()
 }
 void Print()
 {
-    try 
-    { system("clear"); } // Unix
-    catch(int n)
-    { system("cls"); }   // Windows
+    cout << "\033[2J\033[1;1H"; 
+    // Thanks Stack overflow for this clear screen command   https://stackoverflow.com/a/32008479/14228172
 
     for (int y = 0; y < height; y++)
     {
