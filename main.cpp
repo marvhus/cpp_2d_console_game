@@ -22,7 +22,7 @@ void lowerCase(string& strToConvert)
         strToConvert[i] = tolower(strToConvert[i]);
     }
 }
-void Startup() 
+void Startup()
 {
     gameOver = false;
     height = 8;
@@ -32,8 +32,10 @@ void Startup()
 }
 void Print()
 {
-    cout << "\033[2J\033[1;1H"; 
-    // Thanks Stack overflow for this clear screen command   https://stackoverflow.com/a/32008479/14228172
+    // windows
+    //system("cls");
+    // unix
+    system("clear");
 
     for (int y = 0; y < height; y++)
     {
@@ -67,28 +69,28 @@ void Logic()
 
     if (userInput == "q")
     { gameOver = true; }
-    else if (userInput == "w") 
-    { 
-        if (!Colission(py-1, px)) 
-        { py--; } 
+    else if (userInput == "w")
+    {
+        if (!Colission(py-1, px))
+        { py--; }
     }
-    else if (userInput == "s") 
-    { 
-        if (!Colission(py+1, px)) 
-        { py++; } 
+    else if (userInput == "s")
+    {
+        if (!Colission(py+1, px))
+        { py++; }
     }
-    else if (userInput == "a") 
-    { 
-        if (!Colission(py, px-1)) 
-        { px--; } 
+    else if (userInput == "a")
+    {
+        if (!Colission(py, px-1))
+        { px--; }
     }
-    else if (userInput == "d") 
-    { 
-        if (!Colission(py, px+1)) 
-        { px++; } 
+    else if (userInput == "d")
+    {
+        if (!Colission(py, px+1))
+        { px++; }
     }
 }
-int main() 
+int main()
 {
     Startup();
     while (!gameOver)
